@@ -1,0 +1,64 @@
+// import Header from './components/Header';
+// import Welcome from './components/Welcome';
+// import Hh from './components/Hh';
+// import './App.css';
+// import Controlledinput from './components/Controlledinputs';
+// import Uncontrolledinput from './components/Uncontrolledimputs';
+// import Display from './components/Display';
+// import ClickExample from './components/ClickExample'
+// import LoginForm from './LoginForm';  // Changed from './components/LoginForm'
+// import Restaurant from './components/Restaurant';
+// import Registor from './components/Registor';
+// import UserList from './components/UserList';
+// import Footer from './components/Footer';
+
+// function App() {
+//   const a='Dilshad';
+//   const x=20;
+//   const fruits=['apple','banana','orange'];
+//   return (
+   
+//     <div className="app">
+//       <video
+//         autoPlay
+//         muted
+//         loop
+//         style={{
+//           position: 'fixed',
+//           width: '100%',
+//           height: '100%',
+//           objectFit: 'cover',
+//           zIndex: '-1',
+//           top: 0,
+//           left: 0
+//         }}
+//       >
+//         <source src="https://motionbgs.com/media/135/totoro-on-top-of-a-tree.960x540.mp4" type="video/mp4" />
+//       </video>
+//       <Registor/>
+//       <Header /> 
+//        <main className="main-content">
+//         <Welcome />
+//         <Controlledinput />
+//         <Uncontrolledinput/>
+//         <Display/>
+//         <ClickExample/>
+//         <LoginForm/>
+//         <Restaurant/>
+//         <UserList/>
+//          <>
+//           <h4 style={{color:"#fff"}}>List elements</h4>
+//           <ul style={{color:"#fff"}}>
+//             {fruits.map((fruit, index) => (
+//               <li key={index}>{fruit}</li>
+//             ))}
+//           </ul>
+//         </>
+//       </main>
+//       <Hh name="Sajid" age="18"/>
+//       <Footer />
+//     </div>
+//   );
+// }
+
+// export default App;

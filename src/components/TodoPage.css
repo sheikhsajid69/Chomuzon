@@ -1,0 +1,378 @@
+/* General Body Styles */
+body {
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  margin: 0;
+  color: #4a5568;
+  line-height: 1.6;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.todo-page-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  padding-top: 120px; /* Fixed value: header (60px) + sub-header (40px) + spacing (20px) */
+  margin-top: 0;
+  min-height: 100vh;
+  background-image: url('https://w.wallhaven.cc/full/w5/wallhaven-w5o5x7.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.add-button, .filter-button, .clear-completed-button, .scratch-button {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.todo-app {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  width: 100%;
+  max-width: 650px;
+  padding: 35px 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: fadeInScaleUp 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  /* Remove any margin-top from .todo-app if it exists and is causing space */
+  /* margin-top: 0; */ 
+}
+
+@keyframes fadeInScaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.todo-app h1 {
+  text-align: center;
+  color: #2d3748;
+  margin-bottom: 30px;
+  font-weight: 500;
+  font-size: 2.2rem;
+  letter-spacing: -0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.todo-form {
+  display: flex;
+  margin-bottom: 30px;
+  gap: 10px;
+}
+
+.todo-input {
+  flex-grow: 1;
+  padding: 14px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  color: #2d3748;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.todo-input:focus {
+  border-color: rgba(66, 153, 225, 0.6);
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.3);
+}
+
+.todo-input::placeholder {
+  color: rgba(45, 55, 72, 0.7);
+}
+
+/* Glass effect for buttons */
+.add-button, .filter-button, .clear-completed-button, .scratch-button {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #2d3748;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.add-button {
+  padding: 14px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.add-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.add-button:active {
+  transform: translateY(0px);
+}
+
+.todo-filters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+  gap: 12px;
+}
+
+.filter-button {
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.filter-button.active {
+  background: rgba(66, 153, 225, 0.3);
+  border-color: rgba(66, 153, 225, 0.5);
+  box-shadow: 0 2px 4px rgba(66, 153, 225, 0.2);
+}
+
+.filter-button:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+}
+
+.empty-state {
+  text-align: center;
+  color: #4a5568;
+  padding: 20px;
+  font-style: italic;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background-color 0.2s ease, opacity 0.3s ease, transform 0.3s ease;
+  position: relative;
+  animation: addItemAnimation 0.4s cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
+  opacity: 0;
+  transform: translateY(10px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Stagger animation for new items */
+.todo-item:nth-child(1) { animation-delay: 0.05s; }
+.todo-item:nth-child(2) { animation-delay: 0.1s; }
+.todo-item:nth-child(3) { animation-delay: 0.15s; }
+
+@keyframes addItemAnimation {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+.todo-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: rgba(160, 174, 192, 0.8);
+  font-style: italic;
+}
+
+/* Custom Checkbox */
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-right: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 22px;
+  width: 22px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+  background: rgba(235, 244, 255, 0.3);
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background: rgba(66, 153, 225, 0.5);
+  border-color: rgba(66, 153, 225, 0.7);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  animation: checkmarkAnimation 0.2s ease-out;
+}
+
+@keyframes checkmarkAnimation {
+  0% { transform: rotate(45deg) scale(0); opacity: 0; }
+  100% { transform: rotate(45deg) scale(1); opacity: 1; }
+}
+
+.todo-text {
+  flex-grow: 1;
+  color: #2d3748;
+  transition: color 0.3s ease;
+  word-break: break-word;
+}
+
+.scratch-button {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #4a5568;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 8px 12px;
+  margin-left: 10px;
+  border-radius: 6px;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.scratch-button:hover {
+  opacity: 1;
+  background: rgba(66, 153, 225, 0.2);
+  color: #3182ce;
+}
+
+/* Scratch Animation */
+.todo-item.scratching .todo-text::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0%;
+  height: 2px;
+  background-color: rgba(229, 62, 62, 0.7);
+  animation: scratchAnimation 0.5s ease-out forwards;
+  transform: translateY(-1px);
+}
+
+@keyframes scratchAnimation {
+  0% { width: 0%; left: 0; }
+  50% { width: 100%; left: 0; }
+  100% { width: 0%; left: 100%; }
+}
+
+/* Removal Animation */
+.todo-item.removing {
+  animation: removeItemAnimation 0.3s ease-out forwards;
+}
+
+@keyframes removeItemAnimation {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+    height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-width: 0;
+  }
+}
+
+.clear-completed-button {
+  display: flex;
+  margin: 30px auto 0;
+  padding: 12px 25px;
+  background: rgba(229, 62, 62, 0.2);
+  color: #c53030;
+  border: 1px solid rgba(229, 62, 62, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.clear-completed-button:hover {
+  background: rgba(229, 62, 62, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.clear-completed-button:active {
+  transform: translateY(0px);
+}
+
+/* Font Awesome Icons */
+.fa-plus, .fa-trash-alt, .fa-check-double {
+  margin-right: 5px;
+}
+

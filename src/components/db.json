@@ -1,0 +1,10 @@
+[
+  {
+    "name": "John Doe",
+    "email": "john@example.com",
+    "phone": "1234567890",
+    "password": "hashedpassword123",
+    "id": 1678234567890,
+    "registeredAt": "2024-01-20T12:34:56.789Z"
+  }
+]

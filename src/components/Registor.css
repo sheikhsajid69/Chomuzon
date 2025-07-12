@@ -1,0 +1,232 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header img {
+  width: 80px;
+  height: auto;
+  margin-right: 1rem;
+}
+
+.header h1 {
+  margin: 0;
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.register-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f5f5f5;
+  background-image: url('https://wallpapercave.com/wp/wp2301613.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.spotify-player {
+  flex: 1;
+  max-width: 500px;
+  min-height: 600px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.spotify-player.dark-mode {
+  background-color: #2d2d2d;
+}
+
+.register-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+.register-form h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-group.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-group.checkbox input {
+  width: auto;
+}
+
+.form-group.checkbox label {
+  margin-bottom: 0;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #357abd;
+}
+
+.submit-btn:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 480px) {
+  .register-form {
+    padding: 1.5rem;
+  }
+}
+
+
+/* Add these new styles */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.theme-toggle button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+/* Dark mode styles */
+.register-container.dark-mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.header.dark-mode {
+  background-color: rgba(40, 40, 40, 0.9);
+}
+
+.header.dark-mode h1 {
+  color: #ffffff;
+}
+
+.header.dark-mode img {
+  background-color: white;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.register-form.dark-mode {
+  background-color: #2d2d2d;
+  color: #ffffff;
+}
+
+.register-form.dark-mode h2 {
+  color: #ffffff;
+}
+
+.register-form.dark-mode .form-group label {
+  color: #ffffff;
+}
+
+.register-form.dark-mode .form-group input,
+.register-form.dark-mode .form-group textarea {
+  background-color: #3d3d3d;
+  border-color: #4a4a4a;
+  color: #ffffff;
+}
+
+.register-form.dark-mode .form-group input:focus,
+.register-form.dark-mode .form-group textarea:focus {
+  border-color: #6a90e2;
+}
+
+/* Light mode styles (your existing styles serve as light mode) */
+.register-container.light-mode {
+  background-color: #f5f5f5;
+}
+
+.theme-toggle button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark mode button styles */
+.dark-mode .theme-toggle button {
+  background-color: #f5f5f5;
+  color: #1a1a1a;
+}
+
+/* Light mode button styles */
+.light-mode .theme-toggle button {
+  background-color: #2d2d2d;
+  color: #ffffff;
+}

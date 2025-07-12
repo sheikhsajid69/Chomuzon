@@ -1,0 +1,283 @@
+/* ChomuzonPlayPage.css */
+.play-page {
+  background-color: #0f171e;
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* Play Header */
+.play-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #1a242f;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.play-logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.play-logo {
+  height: 30px;
+  width: 30px;
+  margin-right: 5px;
+}
+
+.play-text {
+  color: #00a8e1;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.play-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.play-nav li {
+  margin: 0 15px;
+  cursor: pointer;
+  font-size: 14px;
+  position: relative;
+}
+
+.play-nav li.active {
+  font-weight: bold;
+}
+
+.play-nav li.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #00a8e1;
+}
+
+.play-search {
+  cursor: pointer;
+}
+
+/* Banner Slider */
+/* Update the Banner Slider styles for smoother animation */
+.play-banner-slider {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.play-banner-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.play-banner-slide.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+.play-banner-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Improve slider dots for better user experience */
+.play-slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 2;
+}
+
+.play-slider-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.play-slider-dot:hover {
+  transform: scale(1.2);
+}
+
+.play-slider-dot.active {
+  background-color: #00a8e1;
+  transform: scale(1.2);
+}
+
+/* Enhance banner content for better visibility */
+.play-banner-content {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  z-index: 2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+.play-banner-slide.active .play-banner-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.play-banner-content h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.play-watch-btn {
+  background-color: #00a8e1;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.play-slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.play-slider-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.play-slider-dot.active {
+  background-color: #00a8e1;
+}
+
+/* Content Sections */
+.play-content-section {
+  padding: 20px 40px;
+}
+
+.section-title {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.play-content-row {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 15px;
+  scrollbar-width: none; /* Firefox */
+}
+
+.play-content-row::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+.play-content-card {
+  min-width: 200px;
+  height: 120px;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.play-content-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.play-content-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.play-content-card:hover {
+  transform: scale(1.05);
+}
+
+.play-content-card:hover .play-content-overlay {
+  opacity: 1;
+}
+
+.play-content-overlay h3 {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.play-watch-now {
+  background-color: rgba(0, 168, 225, 0.8);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 2px;
+  font-size: 12px;
+  cursor: pointer;
+  display: none;
+}
+
+.play-content-card:hover .play-watch-now {
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .play-nav ul {
+    display: none;
+  }
+  
+  .play-banner-slider {
+    height: 250px;
+  }
+  
+  .play-banner-content {
+    bottom: 30px;
+    left: 20px;
+  }
+  
+  .play-banner-content h2 {
+    font-size: 24px;
+  }
+  
+  .play-content-section {
+    padding: 15px;
+  }
+}

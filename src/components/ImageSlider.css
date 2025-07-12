@@ -1,0 +1,108 @@
+/* Add these styles for improved slider animations */
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto 30px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.7s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+  opacity: 0.8;
+  transition: opacity 0.7s ease;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 0.7s ease;
+}
+
+.slide.active img {
+  transform: scale(1.02);
+}
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.slider-btn {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.slider-container:hover .slider-btn {
+  opacity: 1;
+}
+
+.slider-btn:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: scale(1.1);
+}
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 0 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+.dot.active {
+  background-color: #fff;
+  transform: scale(1.3);
+}
+
+@media (max-width: 768px) {
+  .slide img {
+    height: 300px;
+  }
+  
+  .slider-btn {
+    width: 30px;
+    height: 30px;
+  }
+}

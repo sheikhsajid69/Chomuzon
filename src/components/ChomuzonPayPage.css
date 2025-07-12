@@ -1,0 +1,228 @@
+/* Main container */
+.chomuzon-pay-container {
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f3f3f3;
+  min-height: 100vh;
+}
+
+/* Header */
+.pay-header {
+  background-color: #232f3e;
+  padding: 10px 20px;
+}
+
+.pay-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.pay-text {
+  color: #ff9900;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+/* Pay Page Container */
+.pay-page-container {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 40px;
+}
+
+/* Main Content Layout */
+.pay-content {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+/* Sidebar Styles */
+.pay-sidebar {
+  width: 250px;
+  flex-shrink: 0;
+}
+
+.balance-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.balance-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.balance-amount {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #0F1111;
+}
+
+.sidebar-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #007185;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.sidebar-option i {
+  font-size: 16px;
+}
+
+.sidebar-option:hover {
+  color: #C7511F;
+}
+
+/* Main Content Area */
+.pay-main {
+  flex: 1;
+}
+
+.pay-section {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.pay-section h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #0F1111;
+}
+
+/* Service Grid */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 15px;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.service-img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 8px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.service-card p {
+  margin: 0;
+  font-size: 12px;
+  color: #333;
+}
+
+/* Pay Page Wrapper */
+.pay-wrapper {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  min-height: 100vh;
+  padding-top: 100px; /* Add space for fixed header */
+}
+
+/* Pay Logo Header */
+.pay-logo-header {
+  background-color: #000000; /* Changed to black background */
+  padding: 10px 20px;
+  border-bottom: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pay-logo {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Chomuzon Logo Image */
+.chomuzon-logo {
+  height: 60px;
+  width: 70px;
+  margin-right: 5px;
+}
+
+.pay-text {
+  color: #ff9900;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 5px;
+  position: relative;
+}
+
+/* Content Wrapper */
+.pay-content-wrapper {
+  display: flex;
+  max-width: 1200px;
+  margin: 20px auto;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+/* Chomuzon Pay Banner */
+.pay-banner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.pay-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .pay-content-wrapper {
+    flex-direction: column;
+  }
+  
+  .pay-sidebar {
+    width: 100%;
+  }
+  
+  .service-grid {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  }
+}

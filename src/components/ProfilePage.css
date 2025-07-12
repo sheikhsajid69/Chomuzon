@@ -1,0 +1,161 @@
+/* Ensure body has a background for glass effect to work well if page isn't full screen */
+body {
+  background-color: #f0f2f5; /* Or your app's default background */
+}
+
+.profile-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 40px;
+  padding-top: 120px; /* Fixed value: header (60px) + sub-header (40px) + spacing (20px) */
+  background-image: url('https://w.wallhaven.cc/full/w5/wallhaven-w5o5x7.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.profile-page-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.profile-card {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(30, 39, 56, 0.85); /* Dark background like image, with some transparency */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e0e0e0;
+  overflow: hidden; /* Important for rounded corners and banner */
+  animation: profileCardAppear 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+@keyframes profileCardAppear {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.profile-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #00bcd4; /* Teal color from image */
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.profile-social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.profile-social-icons a {
+  color: #a0aec0;
+  font-size: 1.3rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.profile-social-icons a:hover {
+  color: #00bcd4; /* Teal color */
+  transform: scale(1.1);
+}
+
+.profile-banner {
+  height: 180px;
+  background: linear-gradient(45deg, #00bcd4, #007bff); /* Teal gradient like image */
+  /* If using an image:
+  background-image: url('path/to/your-banner.jpg');
+  background-size: cover;
+  background-position: center;
+  */
+  position: relative; /* For potential overlays or text */
+  border-radius: 0 0 30% 0; /* Curved edge like image */
+  margin-left: -1px; /* Minor adjustment for border */
+  margin-right: -1px; /* Minor adjustment for border */
+}
+
+
+.profile-card-bottom {
+  padding: 25px;
+  text-align: center;
+}
+
+.profile-name {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: -50px; /* Pull name up over the banner curve */
+  margin-bottom: 25px;
+  position: relative; /* Ensure it's above banner */
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.profile-stats {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 10px;
+  flex: 1;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stat-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+.stat-icon {
+  font-size: 1.5rem;
+  color: #00bcd4;
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  font-size: 0.9rem; /* Adjusted from image for actual data */
+  font-weight: 500;
+  color: #ffffff;
+  word-break: break-all; /* For long emails */
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #a0aec0;
+  margin-top: 5px;
+}

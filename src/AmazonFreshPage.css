@@ -1,0 +1,282 @@
+.amazon-fresh-page {
+  font-family: 'Amazon Ember', Arial, sans-serif;
+  background-color: #EAEDED;
+  padding-bottom: 20px;
+}
+
+/* Banner Slider */
+.fresh-banner-slider {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Adjust as needed */
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.fresh-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  display: flex;
+  align-items: center; /* Vertically center content */
+  justify-content: flex-start; /* Align content to the left */
+  padding-left: 5%; /* Add some padding */
+}
+
+.fresh-slide.active {
+  opacity: 1;
+}
+
+.fresh-slide-content {
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+  max-width: 40%;
+}
+
+.fresh-slide-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.fresh-slide-content p {
+  font-size: 1.2rem;
+}
+
+.fresh-slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.fresh-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.fresh-dot.active {
+  background-color: white;
+}
+
+/* Cashback Banner */
+.fresh-cashback-banner {
+  background: linear-gradient(to right, #f9814c, #f05a28);
+  color: white;
+  padding: 15px 30px;
+  margin: 0 20px 20px 20px; /* Add side margins */
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.fresh-cashback-content {
+  display: flex;
+  align-items: center;
+}
+
+.fresh-cashback-icon {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-right: 15px;
+  background-color: white;
+  color: #f05a28;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fresh-cashback-text h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.fresh-cashback-text h2 span {
+  font-weight: 900; /* Bolder for the amount */
+}
+
+.fresh-cashback-text p {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.fresh-collect-now-btn {
+  background-color: white;
+  color: #f05a28;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.fresh-collect-now-btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* Category Section */
+.fresh-category-section, .fresh-products-section {
+  background-color: white;
+  margin: 0 20px 20px 20px; /* Add side margins */
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.fresh-category-section h2, .fresh-products-header h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #0F1111;
+}
+
+.fresh-category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 15px;
+}
+
+.fresh-category-card {
+  text-align: center;
+  cursor: pointer;
+}
+
+.fresh-category-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 8px;
+  border-radius: 4px; /* Slight rounding for images */
+}
+
+.fresh-category-card p {
+  font-size: 0.9rem;
+  color: #0F1111;
+  margin: 0;
+}
+
+/* Products Section (Carousel-like) */
+.fresh-products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.fresh-see-all {
+  color: #007185;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.fresh-see-all:hover {
+  color: #C7511F;
+  text-decoration: underline;
+}
+
+.fresh-products-carousel {
+  display: flex;
+  overflow-x: auto; /* Allows horizontal scrolling */
+  gap: 15px;
+  padding-bottom: 10px; /* For scrollbar visibility */
+}
+
+/* Hide scrollbar for a cleaner look (optional) */
+.fresh-products-carousel::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+.fresh-products-carousel {
+  -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+  scrollbar-width: none;  /* For Firefox */
+}
+
+
+.fresh-product-card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  min-width: 180px; /* Minimum width for carousel items */
+  max-width: 200px;
+  text-align: left;
+  background-color: #fff;
+  position: relative; /* For discount badge */
+}
+
+.fresh-product-discount {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background-color: #CC0C39;
+  color: white;
+  padding: 3px 6px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+.fresh-product-image {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.fresh-product-info {
+  /* styles for product info */
+}
+
+.fresh-product-name {
+  font-size: 0.9rem;
+  color: #0F1111;
+  margin-bottom: 5px;
+  height: 40px; /* Fixed height for name, adjust as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+}
+
+.fresh-product-price {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #B12704;
+  margin-bottom: 8px;
+}
+
+.fresh-product-original-price {
+  text-decoration: line-through;
+  color: #565959;
+  font-size: 0.8rem;
+  margin-left: 5px;
+}
+
+.fresh-add-to-cart-btn {
+  background-color: #FFD814;
+  border: 1px solid #FCD200;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s ease;
+}
+
+.fresh-add-to-cart-btn:hover {
+  background-color: #F7CA00;
+}

@@ -1,0 +1,136 @@
+.amazon-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header Styles */
+.amazon-header {
+  background-color: #131921;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.amazon-logo {
+  width: 100px;
+  object-fit: contain;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.location {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.header-search {
+  flex: 1;
+  margin: 0 20px;
+  display: flex;
+}
+
+.header-search input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+}
+
+.header-search button {
+  padding: 10px 20px;
+  background-color: #febd69;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Footer Styles */
+.amazon-footer {
+  background-color: #232f3e;
+  color: white;
+  padding: 40px 0;
+  margin-top: auto;
+}
+
+.footer-section {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-column {
+  flex: 1;
+  margin: 0 15px;
+}
+
+.footer-column h3 {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #DDD;
+  cursor: pointer;
+}
+
+.footer-column ul li:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #3a4553;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-logo {
+  width: 80px;
+  filter: brightness(0) invert(1);
+}
+
+.language-selector select,
+.country-selector select {
+  padding: 5px 10px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid #848484;
+  border-radius: 3px;
+}
+
+/* Main Content Area */
+.amazon-main {
+  flex: 1;
+  padding: 20px;
+  background-color: #EAEDED;
+}
